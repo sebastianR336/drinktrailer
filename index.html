@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drink Trailer Roldanillo | Granizados</title>
+  <meta name="description" content="Granizados deliciosos en Roldanillo. Pide por Instagram a Drink Trailer Roldanillo." />
+  <meta property="og:title" content="Drink Trailer Roldanillo" />
+  <meta property="og:description" content="Granizados fríos y llenos de sabor. ¡Haz tu pedido por Instagram!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Drink+Trailer+Roldanillo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0ea5e9; /* sky-500 */
+      --bg2:#a78bfa; /* violet-400 */
+      --text:#0b1220;
+      --card:#ffffffee;
+      --accent:#0ea5e9;
+      --accent-2:#22c55e;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif; color:#111827;
+      background: radial-gradient(1200px 600px at 10% 10%, #e0f2fe 0%, transparent 50%),
+                  radial-gradient(800px 500px at 90% 20%, #ede9fe 0%, transparent 55%),
+                  linear-gradient(135deg, var(--bg1), var(--bg2));
+    }
+    .container{min-height:100%; display:grid; place-items:center; padding:20px}
+    .card{
+      width:100%; max-width:840px; background:var(--card); backdrop-filter: blur(8px);
+      border-radius:28px; box-shadow:0 20px 60px rgba(2,6,23,.25);
+      overflow:hidden; position:relative;
+    }
+    .hero{ display:grid; grid-template-columns:1.1fr .9fr; gap:0; }
+    .left{ padding:42px 40px 32px 40px; }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:9999px;
+      background:#ecfeff; color:#0ea5e9; font-weight:600; font-size:12px; letter-spacing:.3px;
+    }
+    .title{ font-size: clamp(28px, 5vw, 48px); line-height:1.05; margin:14px 0 10px; font-weight:800; color:#0b1220 }
+    .subtitle{ font-size: clamp(14px, 2.2vw, 18px); color:#334155; margin-bottom:22px }
+    .cta{ display:flex; flex-wrap:wrap; gap:12px; }
+    .btn{
+      appearance:none; border:0; border-radius:16px; padding:14px 18px; font-weight:700; cursor:pointer;
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none; transition: transform .08s ease, box-shadow .2s ease; 
+      box-shadow:0 8px 18px rgba(14,165,233,.35);
+      background:linear-gradient(135deg, #0ea5e9, #22d3ee); color:white;
+    }
+    .btn:hover{ transform: translateY(-2px) }
+    .btn-outline{ background:white; color:#0ea5e9; box-shadow:inset 0 0 0 2px #0ea5e9; }
+    .grid{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:24px
+    }
+    .flavor{
+      background:#f8fafc; border:1px solid #e5e7eb; border-radius:16px; padding:12px 14px; font-weight:600; text-align:center
+    }
+    .right{
+      position:relative; overflow:hidden; min-height:260px; background: linear-gradient(160deg, rgba(14,165,233,.15), rgba(167,139,250,.15));
+      display:grid; place-items:center; padding:30px
+    }
+    .cup{
+      width:min(90%, 440px); aspect-ratio:3/4; background:linear-gradient(180deg, #e0f2fe, #bae6fd);
+      border:6px solid white; border-bottom:none; border-radius:26px 26px 12px 12px; position:relative; box-shadow: 0 30px 60px rgba(14,165,233,.35);
+    }
+    .cup:before{
+      content:""; position:absolute; inset:-14px 18% auto 18%; height:22px; background:white; border-radius:12px 12px 0 0;
+      box-shadow:0 8px 14px rgba(2,6,23,.08);
+    }
+    .ice{position:absolute; width:64px; height:64px; background:#7dd3fc; opacity:.9; border-radius:12px; transform:rotate(15deg);
+      box-shadow: inset 0 -8px 14px rgba(2,6,23,.12); border:2px solid #e0f2fe}
+    .ice.i1{ top:20%; left:16%}
+    .ice.i2{ top:42%; left:50%}
+    .ice.i3{ top:65%; left:28%}
+    .straw{ position:absolute; width:18px; height:120%; background: linear-gradient(180deg, #fb7185, #f472b6);
+      right:16%; top:-10%; border-radius:10px }
+
+    .section{ padding:28px 40px 36px 40px; border-top:1px solid #eef2f7 }
+    .section h3{ margin:0 0 12px; font-size:20px }
+    .list{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px }
+    .pill{ background:#eef2ff; color:#3730a3; padding:10px 12px; border-radius:9999px; text-align:center; font-weight:600 }
+
+    .footer{ padding:18px 28px 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px }
+    .mini{ font-size:12px; color:#475569 }
+    .ig-fab{ position:fixed; right:18px; bottom:18px; z-index:50 }
+
+    @media (max-width: 860px){
+      .hero{ grid-template-columns:1fr }
+      .right{ order:-1 }
+      .grid{ grid-template-columns:repeat(2,1fr) }
+      .list{ grid-template-columns:repeat(2,1fr) }
+    }
+    @media (max-width: 520px){
+      .grid,.list{ grid-template-columns:1fr }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <main class="card" role="main">
+      <section class="hero">
+        <div class="left">
+          <span class="badge">🍧 Granizados artesanales</span>
+          <h1 class="title">Drink Trailer Roldanillo</h1>
+          <p class="subtitle">Los granizados más fríos y sabrosos de Roldanillo. Sabor, color y frescura en cada vaso. ¡Pide el tuyo ahora!</p>
+          <div class="cta">
+            <a class="btn" aria-label="Ir a Instagram para pedir" href="https://www.instagram.com/drinktrailerroldanillo?igsh=Njh4eDRid3NzcHo0" target="_blank" rel="noopener">💬 Pedir por Instagram</a>
+            <a class="btn btn-outline" href="#sabores">Ver sabores</a>
+          </div>
+          <div class="grid" id="sabores">
+            <div class="flavor">Mango Biche</div>
+            <div class="flavor">Maracuyá</div>
+            <div class="flavor">Fresa & Crema</div>
+            <div class="flavor">Lulo</div>
+            <div class="flavor">Limón Coco</div>
+            <div class="flavor">Gomitas & Syrup</div>
+          </div>
+        </div>
+        <div class="right" aria-hidden="true">
+          <div class="cup">
+            <div class="straw"></div>
+            <div class="ice i1"></div>
+            <div class="ice i2"></div>
+            <div class="ice i3"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Horarios & Ubicación</h3>
+        <div class="list">
+          <div class="pill">⏰ Vie–Dom · 3:00–9:00 p.m.</div>
+          <div class="pill">📍 Roldanillo, Valle</div>
+          <a class="pill" href="https://www.instagram.com/drinktrailerroldanillo?igsh=Njh4eDRid3NzcHo0" target="_blank" rel="noopener">📲 Escríbenos por Instagram</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small class="mini">© <span id="y"></span> Drink Trailer Roldanillo · Tarjeta digital</small>
+        <a class="mini" href="https://www.instagram.com/drinktrailerroldanillo?igsh=Njh4eDRid3NzcHo0" target="_blank" rel="noopener">Instagram: @drinktrailerroldanillo</a>
+      </footer>
+    </main>
+
+    <a class="btn ig-fab" href="https://www.instagram.com/drinktrailerroldanillo?igsh=Njh4eDRid3NzcHo0" target="_blank" rel="noopener" aria-label="Abrir Instagram">🟣 Instagram</a>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
